@@ -139,7 +139,7 @@
 
                 <div class="col-md-6">
                     <label for="brth_rgstr_no" class="form-label">জন্ম নিবন্ধন নাম্বার</label>
-                    <input type="text" class="form-control" id="brth_rgstr_no" name="brth_rgstr_no" required>
+                    <input type="number" class="form-control" id="brth_rgstr_no" name="brth_rgstr_no" required>
                 </div>
                 <div class="col-md-6">
                     <label for="brth_dt" class="form-label">জন্ম তারিখ</label>
