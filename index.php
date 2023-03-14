@@ -38,40 +38,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+
     <title>CRUD APP</title>
 
     
-<script>
-  // Add datepicker to input fields
-  $(function() {
-    $("#rgstr_dt, #card_rcv_dt, #brth_dt").datepicker();
-  });
-
-  // Add submit event listener to form
-  $("#myForm").submit(function(event) {
-    event.preventDefault(); // prevent default form submission
-
-    // Get the values of the date fields
-    var rgstr_dt = $("#rgstr_dt").val();
-    var card_rcv_dt = $("#card_rcv_dt").val();
-    var brth_dt = $("#brth_dt").val();
-
-    // Send the data to the server using AJAX
-    $.ajax({
-      type: "POST",
-      url: "#",
-      data: {
-        rgstr_dt: rgstr_dt,
-        card_rcv_dt: card_rcv_dt,
-        brth_dt: brth_dt
-      },
-      success: function(response) {
-        console.log(response);
-      }
-    });
-  });
-</script>
-
+    
 </head>
 
 <body>
@@ -151,16 +122,16 @@
                     <label for="ordr_of_chldrn" class="form-label">সন্তানের ক্রম </label>
                     <select id="ordr_of_chldrn" class="form-select" name="ordr_of_chldrn">
                         <?php
-                        for ($i = 1; $i <= 19; $i++) {
-                            echo "<option>" . convertToBengaliDigits(sprintf('%02d', $i)) . "</option>";
-                        }
+                            for ($i = 1; $i <= 19; $i++) {
+                                echo "<option>" . convertToBengaliDigits(sprintf('%02d', $i)) . "</option>";
+                            }
 
-                        function convertToBengaliDigits($number)
-                        {
-                            $bengaliDigits = array("০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯");
-                            $converted = str_replace(range(0, 9), $bengaliDigits, $number);
-                            return $converted;
-                        }
+                            function convertToBengaliDigits($number)
+                            {
+                                $bengaliDigits = array("০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯");
+                                $converted = str_replace(range(0, 9), $bengaliDigits, $number);
+                                return $converted;
+                            }
                         ?>
                     </select>
                 </div>
@@ -272,6 +243,7 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="lib/datepicker.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
